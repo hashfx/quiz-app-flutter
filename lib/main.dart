@@ -56,6 +56,31 @@ class _HomePageState extends State<HomePage> {
                       height: 4.0,
                       thickness: 1.0,
                     ),
+                    const SizedBox(height: 20.0),
+                    // displays question
+                    Text(
+                      questions[index].question!,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 28.0,
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 25.0,
+                    ),
+
+                    // generate buttons for options
+                    for (int i = 0; i < questions[index].answer!.length; i++)
+                      MaterialButton(
+                        shape: StadiumBorder(),
+                        color: secondaryColor,
+                        onPressed: () {},
+                        child: Text(questions[index].answer!.keys.toList()[i],
+                        style: TextStyle(color: Colors.white),
+                        ),
+                        
+                      ),
                   ],
                 );
               },

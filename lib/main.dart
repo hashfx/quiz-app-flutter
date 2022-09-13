@@ -67,19 +67,24 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                     SizedBox(
-                      height: 25.0,
+                      height: 35.0,
                     ),
 
                     // generate buttons for options
                     for (int i = 0; i < questions[index].answer!.length; i++)
-                      MaterialButton(
-                        shape: StadiumBorder(),
-                        color: secondaryColor,
-                        onPressed: () {},
-                        child: Text(questions[index].answer!.keys.toList()[i],
-                        style: TextStyle(color: Colors.white),
+                      Container(
+                        width: double.infinity,
+                        margin: EdgeInsets.only(bottom: 18.0),
+                        child: MaterialButton(
+                          shape: StadiumBorder(),
+                          color: secondaryColor,
+                          padding: EdgeInsets.symmetric(vertical: 18.0),
+                          onPressed: () {},
+                          child: Text(
+                            questions[index].answer!.keys.toList()[i],
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
-                        
                       ),
                   ],
                 );

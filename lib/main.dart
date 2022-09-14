@@ -27,15 +27,13 @@ class SplashScr extends StatelessWidget {
     return SplashScreen(
       seconds: 6,
       navigateAfterSeconds: new HomePage(),
-      title: Text(
-        "Quizzy",
-        textScaleFactor: 2,
-        style: TextStyle(
-          color: Colors.red,
-          fontFamily: 'Nabla',
-          fontSize: 48,
-        )
-      ),
+      title: Text("Quizzy",
+          textScaleFactor: 2,
+          style: TextStyle(
+            color: Colors.red,
+            fontFamily: 'Nabla',
+            fontSize: 48,
+          )),
       image: new Image.network('https://picsum.photos/600/800'),
       backgroundColor: Colors.lightBlueAccent.shade100,
       loadingText: Text("Loading..."),

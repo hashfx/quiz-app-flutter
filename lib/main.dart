@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: SplashScr(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -27,11 +27,17 @@ class SplashScr extends StatelessWidget {
     return SplashScreen(
       seconds: 6,
       navigateAfterSeconds: new HomePage(),
-      title: new Text(
+      title: Text(
         "Quizzy",
         textScaleFactor: 2,
+        style: TextStyle(
+          color: Colors.red,
+          fontFamily: 'Nabla',
+          fontSize: 48,
+        )
       ),
-      // image: new Image.network('https://picsum.photos/200/300'),
+      image: new Image.network('https://picsum.photos/600/800'),
+      backgroundColor: Colors.lightBlueAccent.shade100,
       loadingText: Text("Loading..."),
       photoSize: 100.0,
       loaderColor: Colors.blue,
@@ -139,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                                       .toList()[i]
                                       .value) {
                                     score += 10;
-                                    print(score);
+                                    // print(score);
                                   }
                                 },
                           child: Text(

@@ -32,6 +32,12 @@ class _HomePageState extends State<HomePage> {
   // page controller for page view
   PageController? _controller = PageController(initialPage: 0);
 
+  // game variable
+  bool isPressed = false;
+  Color isRight = Colors.green;
+  Color isWrong = Colors.red;
+  Color btnColor = Color(0xFF117eeb);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,9 +86,27 @@ class _HomePageState extends State<HomePage> {
                         margin: EdgeInsets.only(bottom: 18.0),
                         child: MaterialButton(
                           shape: StadiumBorder(),
-                          color: secondaryColor,
+                          color: btnColor,
                           padding: EdgeInsets.symmetric(vertical: 18.0),
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              isPressed = true;
+                            });
+                            if (questions[index]
+                                .answer!
+                                .entries
+                                .toList()[i]
+                                .value) {
+                              setState(() {
+                                isPressed = true;
+                                btnColor = isRight;
+                              });
+                            } else {
+                              setState(() {
+                                btnColor = isWrong;
+                              });
+                            }
+                          },
                           child: Text(
                             questions[index].answer!.keys.toList()[i],
                             style: TextStyle(color: Colors.white),

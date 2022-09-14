@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/question_list.dart';
 import 'package:quiz_app/screens/result_screen.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: HomePage(),
       debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class SplashScr extends StatelessWidget {
+  const SplashScr({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SplashScreen(
+      seconds: 6,
+      navigateAfterSeconds: new HomePage(),
+      title: new Text(
+        "Quizzy",
+        textScaleFactor: 2,
+      ),
+      // image: new Image.network('https://picsum.photos/200/300'),
+      loadingText: Text("Loading..."),
+      photoSize: 100.0,
+      loaderColor: Colors.blue,
     );
   }
 }

@@ -46,6 +46,8 @@ class _HomePageState extends State<HomePage> {
         body: Padding(
             padding: EdgeInsets.all(18.0),
             child: PageView.builder(
+              // disable scrolling to avoid sliding to next question
+              physics: const NeverScrollableScrollPhysics(),
               controller: _controller!,
               onPageChanged: (page) {
                 setState(() {
@@ -115,6 +117,7 @@ class _HomePageState extends State<HomePage> {
                                       .toList()[i]
                                       .value) {
                                     score += 10;
+                                    print(score);
                                   }
                                 },
                           child: Text(
@@ -133,8 +136,8 @@ class _HomePageState extends State<HomePage> {
                           onPressed: isPressed
                               ? () {
                                   _controller!.nextPage(
-                                      duration: Duration(milliseconds: 750),
-                                      curve: Curves.bounceIn);
+                                      duration: Duration(milliseconds: 500),
+                                      curve: Curves.linear);
                                 }
                               : null,
                           style: ButtonStyle(),

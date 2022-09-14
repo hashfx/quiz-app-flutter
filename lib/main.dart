@@ -46,6 +46,12 @@ class _HomePageState extends State<HomePage> {
         body: Padding(
             padding: EdgeInsets.all(18.0),
             child: PageView.builder(
+              controller: _controller!,
+              onPageChanged: (page) {
+                setState(() {
+                  isPressed = false;
+                });
+              },
               itemCount: questions.length, // number of questions
               itemBuilder: (context, index) {
                 return Column(

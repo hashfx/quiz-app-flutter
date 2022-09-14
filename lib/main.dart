@@ -32,11 +32,12 @@ class _HomePageState extends State<HomePage> {
   // page controller for page view
   PageController? _controller = PageController(initialPage: 0);
 
-  // game variable
+  // game variables
   bool isPressed = false;
   Color isRight = Colors.green;
   Color isWrong = Colors.red;
   Color btnColor = Color(0xFF117eeb);
+  int score = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -105,14 +106,7 @@ class _HomePageState extends State<HomePage> {
                                 .entries
                                 .toList()[i]
                                 .value) {
-                              setState(() {
-                                isPressed = true;
-                                btnColor = isRight;
-                              });
-                            } else {
-                              setState(() {
-                                btnColor = isWrong;
-                              });
+                              score += 10;
                             }
                           },
                           child: Text(

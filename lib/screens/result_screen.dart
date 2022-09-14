@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -43,7 +45,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 ),
                 SizedBox(height: 50.0),
                 Text(
-                  "${widget.score}/${questions.length*10}",
+                  "${widget.score}/${questions.length * 10}",
                   style: TextStyle(
                     color: Colors.orange,
                     fontSize: 80.0,
@@ -57,7 +59,7 @@ class _ResultScreenState extends State<ResultScreen> {
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                   },
-                  elevation: 0.0,
+                  elevation: 2.0,
                   color: Colors.orange,
                   textColor: Colors.white,
                   child: Text("Repeat Quiz"),

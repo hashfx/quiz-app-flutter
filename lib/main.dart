@@ -147,9 +147,15 @@ class _HomePageState extends State<HomePage> {
                                       _controller!.nextPage(
                                           duration: Duration(milliseconds: 500),
                                           curve: Curves.linear);
+                                      setState(() {
+                                        isPressed = false;
+                                      });
                                     }
                               : null,
-                          style: ButtonStyle(),
+                          style: OutlinedButton.styleFrom(
+                            shape: StadiumBorder(),
+                            side: BorderSide(color: Colors.orange, width: 1.0),
+                          ),
                           child: Text(
                             index + 1 == questions.length
                                 ? "See Result"

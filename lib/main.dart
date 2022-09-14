@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/question_list.dart';
+import 'package:quiz_app/screens/result_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -135,7 +136,13 @@ class _HomePageState extends State<HomePage> {
                         OutlinedButton(
                           onPressed: isPressed
                               ? index + 1 == questions.length
-                                  ? () {}
+                                  ? () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  ResultScreen(score)));
+                                    }
                                   : () {
                                       _controller!.nextPage(
                                           duration: Duration(milliseconds: 500),

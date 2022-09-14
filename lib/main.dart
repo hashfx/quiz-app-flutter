@@ -86,7 +86,15 @@ class _HomePageState extends State<HomePage> {
                         margin: EdgeInsets.only(bottom: 18.0),
                         child: MaterialButton(
                           shape: StadiumBorder(),
-                          color: btnColor,
+                          color: isPressed
+                              ? questions[index]
+                                      .answer!
+                                      .entries
+                                      .toList()[i]
+                                      .value
+                                  ? isRight
+                                  : isWrong
+                              : secondaryColor,
                           padding: EdgeInsets.symmetric(vertical: 18.0),
                           onPressed: () {
                             setState(() {

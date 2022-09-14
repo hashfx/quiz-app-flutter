@@ -29,6 +29,9 @@ class _HomePageState extends State<HomePage> {
   Color mainColor = Color(0xFF252c4a);
   Color secondaryColor = Color(0xFF117eeb);
 
+  // page controller for page view
+  PageController? _controller = PageController(initialPage: 0);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,6 +89,24 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                    SizedBox(
+                      height: 50.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        OutlinedButton(
+                          onPressed: () {},
+                          style: ButtonStyle(),
+                          child: Text(
+                            "Next Question",
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 );
               },

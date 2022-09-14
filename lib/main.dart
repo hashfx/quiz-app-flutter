@@ -134,15 +134,19 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         OutlinedButton(
                           onPressed: isPressed
-                              ? () {
-                                  _controller!.nextPage(
-                                      duration: Duration(milliseconds: 500),
-                                      curve: Curves.linear);
-                                }
+                              ? index + 1 == questions.length
+                                  ? () {}
+                                  : () {
+                                      _controller!.nextPage(
+                                          duration: Duration(milliseconds: 500),
+                                          curve: Curves.linear);
+                                    }
                               : null,
                           style: ButtonStyle(),
                           child: Text(
-                            "Next Question",
+                            index + 1 == questions.length
+                                ? "See Result"
+                                : "Next Question",
                             style: TextStyle(
                               color: Colors.white,
                             ),

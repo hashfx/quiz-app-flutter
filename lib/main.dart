@@ -97,18 +97,20 @@ class _HomePageState extends State<HomePage> {
                                   : isWrong
                               : secondaryColor,
                           padding: EdgeInsets.symmetric(vertical: 18.0),
-                          onPressed: () {
-                            setState(() {
-                              isPressed = true;
-                            });
-                            if (questions[index]
-                                .answer!
-                                .entries
-                                .toList()[i]
-                                .value) {
-                              score += 10;
-                            }
-                          },
+                          onPressed: isPressed
+                              ? () {}
+                              : () {
+                                  setState(() {
+                                    isPressed = true;
+                                  });
+                                  if (questions[index]
+                                      .answer!
+                                      .entries
+                                      .toList()[i]
+                                      .value) {
+                                    score += 10;
+                                  }
+                                },
                           child: Text(
                             questions[index].answer!.keys.toList()[i],
                             style: TextStyle(color: Colors.white),
@@ -122,7 +124,13 @@ class _HomePageState extends State<HomePage> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         OutlinedButton(
-                          onPressed: () {},
+                          onPressed: isPressed
+                              ? () {
+                                  _controller!.nextPage(
+                                      duration: Duration(milliseconds: 750),
+                                      curve: Curves.bounceIn);
+                                }
+                              : null,
                           style: ButtonStyle(),
                           child: Text(
                             "Next Question",

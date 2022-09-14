@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:quiz_app/data/question_list.dart';
 import 'package:quiz_app/main.dart';
 
 class ResultScreen extends StatefulWidget {
@@ -42,7 +43,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 ),
                 SizedBox(height: 50.0),
                 Text(
-                  "${widget.score}",
+                  "${widget.score}/${questions.length*10}",
                   style: TextStyle(
                     color: Colors.orange,
                     fontSize: 80.0,

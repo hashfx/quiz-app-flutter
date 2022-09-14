@@ -2,30 +2,48 @@ import 'package:quiz_app/model/question_model.dart';
 
 List<QuestionModel> questions = [
   QuestionModel(
-    "This is a Question",
+    "Flutter is developed by",
     {
-      "1": false,
-      "2": false,
-      "3": false,
-      "4": true,
+      "Google": true,
+      "Microsoft": false,
+      "HTML": false,
+      "69": false,
     },
   ),
   QuestionModel(
-    "Another Question",
+    "OOPS Stands for",
     {
-      "1": true,
-      "2": false,
-      "3": false,
-      "4": false,
+      "Object Oriented Programming System": true,
+      "It stands for itself": false,
+      "Oops moment!": false,
+      "Hyper Text Markup Language": false,
     },
   ),
   QuestionModel(
-    "Heya Question",
+    "Key to success is",
     {
-      "1": false,
-      "2": false,
-      "3": true,
-      "4": false,
+      "Primary Key": false,
+      "Power Key": false,
+      "Discipline": true,
+      "Low-Key": false,
+    },
+  ),
+  QuestionModel(
+    "Choose Random Option and see for your luck😉",
+    {
+      "Option 1": false,
+      "Option 2": false,
+      "Option 3": true,
+      "Option 4": false,
+    },
+  ),
+  QuestionModel(
+    "Which is not a Programming Language",
+    {
+      "Coffee": false,
+      "HTML": true,
+      "English": false,
+      "Missing Semicolon": false,
     },
   ),
 ];

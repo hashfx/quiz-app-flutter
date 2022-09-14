@@ -1,6 +1,20 @@
-# quiz_app
+# Quiz Application in Fluter
 
-A new Flutter project.
+### Getting Started
+
++ [Setup Flutter SDK](https://docs.flutter.dev/get-started/install)
++ [Setup Editor](https://docs.flutter.dev/development/tools)
++ [Create Project on Visual Studio Code](https://docs.flutter.dev/development/tools/vs-code#creating-a-new-project)
+
+```powershell
+# clone git repo
+git clone https://github.com/hashfx/quiz-app-flutter.git
+
+# run flutter app: make sure to run commands from root directory of application
+flutter run -d chrome  # for chrome browser
+flutter run -d web-server  # for all browsers
+
+```
 
 ## Getting Started
 
